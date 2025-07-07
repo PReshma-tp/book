@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+env/
+*.env
+*.venv
+social-site-env/
+
+# Django stuff
+*.log
+db.sqlite3
+staticfiles/
+media/
+
+# VS Code & IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional, only if you don't want to track them yet)
+**/migrations/*.pyc
+**/migrations/__pycache__/
