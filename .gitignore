@@ -31,3 +31,6 @@ Thumbs.db
 # Migrations (optional, only if you don't want to track them yet)
 **/migrations/*.pyc
 **/migrations/__pycache__/
+
+*.key
+*.crt
