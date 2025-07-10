@@ -49,5 +49,28 @@
     {% block content %}
     {% endblock %}
   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+   <script>
+      var csrftoken = Cookies.get('csrftoken');
+      function csrfSafeMethod(method) {
+         // these HTTP methods do not require CSRF protection
+         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+         }
+       }
+     });
+     $(document).ready(function(){
+        // This is not an error.
+        // The {% block domready %} tag is a Django template block.
+        // It will be replaced with page-specific JavaScript when the template is rendered.
+       {% block domready %} 
+       {% endblock %} 
+     });
+   </script>
  </body>
  </html>
