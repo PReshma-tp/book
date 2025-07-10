@@ -14,7 +14,7 @@
       <a href="{% url "dashboard" %}">My dashboard</a>
       </li>
       <li {% if section == "images" %}class="selected"{% endif %}>
-      <a href="#">Images</a>
+      <a href="{% url "images:list" %}">Images</a>
       </li>
       <li {% if section == "people" %}class="selected"{% endif %}>
       <a href="#">People</a>
@@ -66,7 +66,7 @@
      });
      $(document).ready(function(){
         // This is not an error.
-        // The {% block domready %} tag is a Django template block.
+        // The block domready  tag is a Django template block.
         // It will be replaced with page-specific JavaScript when the template is rendered.
        {% block domready %} 
        {% endblock %} 
